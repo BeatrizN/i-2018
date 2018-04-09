@@ -1,8 +1,13 @@
+/**
+ * TODO nota de copyright aqui
+ * TODO altere o nome deste package, por exemplo, para br.ufg.inf.integracao.topico1
+ */
 package atividade1;
 
 import java.io.*;
 
 /**
+ * TODO documente a classe
  * Created by Beatriz on 19/03/18.
  */
 public class Questao1 {
@@ -16,6 +21,9 @@ public class Questao1 {
         int bytes;
         for (int i = 0; i<4; i++) {
 
+            // FIXME 
+            // Conforme documentação, lê um caractere como um inteiro, ou seja,
+            // interpreta a entrada como texto. Não é o que desejamos!
             bytes =  br.read();
             System.out.println(Integer.toHexString(bytes));
         }
