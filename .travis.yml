@@ -1,6 +1,5 @@
+script: mvn -f i-2018/pom.xml
 
-# Você precisa acrescentar
-# script: mvn -f i-2018/pom.xml
 language: java
 
 addons:
