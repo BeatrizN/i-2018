@@ -1,9 +1,14 @@
+/**
+ * Copyright (c) 2018.
+ * Beatriz Nogueira Carvalho da Silveira
+ * Creative Commons Attribution 4.0 International License.
+ */
+
 package main.java.br.ufg.inf.es.integracao.serializacao.atividade1;
 
 /**
  *
- * @author Beatriz    
-}*/
+ */
 
 import main.java.br.ufg.inf.es.integracao.serializacao.atividade1.Produto;
 
