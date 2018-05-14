@@ -52,6 +52,5 @@ public class Questao4 {
         PrintWriter pw = new PrintWriter(nomeArquivo, "UTF-8");
         pw.write(arquivo);
         pw.close();
-
     }
 }
