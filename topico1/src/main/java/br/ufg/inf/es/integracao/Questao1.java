@@ -1,33 +1,53 @@
 /**
- * TODO nota de copyright aqui
- * TODO altere o nome deste package, por exemplo, para br.ufg.inf.integracao.topico1
+ * Copyright (c) 2018.
+ * Beatriz Nogueira Carvalho da Silveira
+ * Creative Commons Attribution 4.0 International License.
  */
+
 package main.java.br.ufg.inf.es.integracao;
 
-import java.io.*;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 /**
- * TODO documente a classe
- * Created by Beatriz on 19/03/18.
+ * Classe que recebe como único argumento um nome de arquivo e exibe os
+ * 4 primeiros bytes (inteiro de 32 bits) em formato hexadecimal na saída padrão.
  */
 public class Questao1 {
 
-    public static void main (String [] args) throws IOException {
+    /**
+     * Este método exibe o resultado do método retornaHexadecimal para ou usuário.
+     * @param args nome do arquivo.
+     */
+    public static void main (String [] args) {
 
-        FileInputStream fis = new FileInputStream(args[0]);
-        InputStreamReader isr = new InputStreamReader(fis, "UTF-8");
-        BufferedReader br = new BufferedReader(isr);
+        try {
+            System.out.println(retornaHexadecimal(args[0]));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-        int bytes;
-        for (int i = 0; i<4; i++) {
+    /**
+     * Este metodo lê o conteúdo de um arquivo e retorna os 4 primeiros bytes (inteiro de 32 bits)
+     * em formato hexadecimal.
+     * @param nomeArquivo nome do arquivo recebido como parâmetro.
+     * @return 4 primeiros bytes do arquivo.
+     * @throws IOException apresenção exceção quando o nome do arquivo está em branco.
+     */
+    public static int retornaHexadecimal (String nomeArquivo) throws IOException {
 
-            // FIXME 
-            // Conforme documentação, lê um caractere como um inteiro, ou seja,
-            // interpreta a entrada como texto. Não é o que desejamos!
-            bytes =  br.read();
-            System.out.println(Integer.toHexString(bytes));
+        if (nomeArquivo.equals(null) || nomeArquivo.trim().isEmpty()) {
+            throw new IllegalArgumentException("Arquivo inválido");
         }
 
-        br.close();
+        FileInputStream fis = new FileInputStream(nomeArquivo);
+        DataInputStream arquivo = new DataInputStream(fis);
+        int saidaHexadecimal = arquivo.readInt();
+        arquivo.close();
+
+        return Integer.parseInt(Integer.toHexString(saidaHexadecimal));
+
     }
 }
