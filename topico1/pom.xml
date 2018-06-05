@@ -152,10 +152,10 @@
                 <version>1.1.10</version>
                 <configuration>
                     <targetClasses>
-                        <param>com.github.BeatrizN.i-2018.topico1.src.main.java.br.ufg.inf.es.integracao.*</param>
+                        <param>com.github.BeatrizN.i-2018.topico1.*</param>
                     </targetClasses>
                     <targetTests>
-                        <param>com.github.BeatrizN.i-2018.topico1.src.test.java.br.ufg.inf.es.integracao.*</param>
+                        <param>com.github.BeatrizN.i-2018.topico1.*</param>
                     </targetTests>
                 </configuration>
             </plugin>
