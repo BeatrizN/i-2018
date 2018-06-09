@@ -28,9 +28,9 @@ public class InteracaoUser {
         String estado_ctps = "";
 
         //Dado Demográfico
-        //    String data_obito = ""; //////////////////////////
-        //    String data_nascimento = "";////////////////////
-        //    String nacionalidade = "";///////////////
+        //    Data data_obito = ""; //////////////////////////
+        //    Data data_nascimento = "";////////////////////
+        //    Nacionalidade nacionalidade = "";///////////////
         String sexo = "";
         String nome_da_mae = "";
         String nome_do_pai = "";
@@ -43,17 +43,17 @@ public class InteracaoUser {
         String nascimento_seguimento = "";
 
         //Data
-        String data = "";
+        Data data = "";
         String acuracia = "";
 
         //Endereço
         String key_endereco = "";
-        //    String data_inicio_endereco = ""; /////
-        //    String data_fim_endereco = "";//////
+        //    Data data_inicio_endereco = ""; /////
+        //    Data data_fim_endereco = "";//////
         //    String linha_endereco = "";///////
         String bairro = "";
         String distrito = "";
-        String codigo_municipio = "";
+        int codigo_municipio = "";
         String estado_endereco = "";
         String CEP = "";
         String caixa_postal = "";
@@ -62,14 +62,15 @@ public class InteracaoUser {
 
         //Identificador
         String key_identificador = "";
-        //    String CTPS = ""; /////
-        //    String certidao = "";/////
-        //    String titulo_eleitoral = "";//////
-        //    String vinculo_identificador = "";/////
+        //    Ctps CTPS = ""; /////
+        //    Certidao certidao = "";/////
+        //    TituloEleitoral titulo_eleitoral = "";//////
+        //    Vinculo vinculo_identificador = "";/////
+        //    Utilizacao utilizacaoId = "";/////
         String designacao = "";
         String area = "";
         String emissor = "";
-        String data_identificador = "";
+        Calendar data_identificador = "";
         String tipo_identificador = "";
 
         //Indivíduo
@@ -82,8 +83,8 @@ public class InteracaoUser {
         //    String[] vinculo;///////////////////
 
         //Linha de Endereço
-        String ordem = "";
-        String linha = "";
+        int ordem = "";
+        int linha = "";
 
         //Nacionalidade
         String municipio = "";
@@ -295,7 +296,8 @@ public class InteracaoUser {
         data_inicio_vinculo = informacao.nextLine();
         System.out.println("Digite a data de finalização do vinculo. \n");
         data_fim_vinculo = informacao.nextLine();
- 
+
+        
  /*********************************************************************************************************/
         Certidao i_certidao = new Certidao();
         i_certidao.setTipo(tipo_certidao);
@@ -313,57 +315,56 @@ public class InteracaoUser {
         Ctps i_ctps = new Ctps();
         i_ctps.setSerie(serie);
         i_ctps.setEstado(estado_ctps);
- 
- /*********************************************************************************************************/
- 
- 
-         /*
-        Comunicacao
-        private String meio;
-        private String preferencia;
-        private String detalhes;
-        private String uso;
         
-        DadoDemografico
-        private Data nascimento;
-        private Data obito;
-        private Nacionalidade nacionalidade;
-        private String sexo;
-        private String nomeMae;
-        private String nomePai;
-        private String situacaoFamiliar;
-        private String raca;
-        private String comentario;
-        private String fonteNotificacaoObito;
-        private String nascimentoPluralidade;
-        private String nascimentoOrdem;
-        private String nascimentoseguinte;
+        DadoDemografico i_dadoDemografico = new DadoDemografico();
+        //i_dadoDemografico.setNascimento(data_nascimento);
+        //i_dadoDemografico.setObito(data_obito);
+        //i_dadoDemografico.setNacionalidade(nacionalidade);
+        i_dadoDemografico.setSexo(sexo);
+        i_dadoDemografico.setNomeMae(nome_da_mae);
+        i_dadoDemografico.setNomePai(nome_do_pai);
+        i_dadoDemografico.setSituacaoFamiliar(situacao_familiar);
+        i_dadoDemografico.setRaca(raca_cor);
+        i_dadoDemografico.setComentario(comentario);
+        i_dadoDemografico.setFonteNotificacaoObito(fonte_notificacao_obito);
+        i_dadoDemografico.setNascimentoPluralidade(nascimento_pluralidade);
+        i_dadoDemografico.setNascimentoOrdem(nascimento_ordem);
+        i_dadoDemografico.setNascimentoseguinte(nascimento_seguimento);
+
+        Data i_data = new Data();
+        i_data.setData(data);
+        i_data.setAcuracia(acuracia);
         
-        Endereco
-        private List<LinhaEndereco> linhaEndereco;
-        private Data dataInicio;
-        private Data dataFim;
-        private String bairro;
-        private String distrito;
-        private int codigoMunicipio;
-        private String estado;
-        private String cep;
-        private String caixaPostal;
-        private String pais;
-        private String tipo;
-    
-        Identificador
-        private String designacao;
-        private String area;
-        private String emissor;
-        private Calendar data;
-        private String tipo;
-        private Utilizacao utilizacao;
-        private Vinculo vinculo;
-        private Ctps ctps;
-        private Certidao certidao;
-        private TituloEleitoral tituloEleitoral;
+        Endereco i_endereco = new Endereco();
+        //i_endereco.set linhaEndereco(linha_endereco);
+        //i_endereco.setDataInicio(data_inicio_endereco);
+        //i_endereco.setDataFim(data_fim_endereco);
+        i_endereco.setBairro(bairro);
+        i_endereco.setDistrito(distrito);
+        i_endereco.setCodigoMunicipio(codigo_municipio);
+        i_endereco.setEstado(estado_endereco);
+        i_endereco.setCep(CEP);
+        i_endereco.setCaixaPostal(caixa_postal);
+        i_endereco.setPais(pais_endereco);
+        i_endereco.setTipo(tipo_endereco);
+
+        Identificador i_identificador = new Identificador();
+        i_identificador.setDesignacao(designacao);
+        i_identificador.setArea(area);
+        i_identificador.setEmissor(emissor);
+        i_identificador.setData(data_identificador);
+        i_identificador.setTipo(tipo_identificador);
+        //i_identificador.setUtilizacao(utilizacaoId);
+        //i_identificador.setVinculo(vinculo_identificador);
+        //i_identificador.setCtps(CTPS);
+        //i_identificador.setCertidao(certidao);
+        //i_identificador.setTituloEleitoral(titulo_eleitoral);
         
+        LinhaEndereco i_linhaEndereco = new LinhaEndereço();
+        i_linhaEndereco.setOrdem(ordem);
+        i_linhaEndereco.setLinha(linha);
+        
+        /*
         Nome
         private List<Representacao> representacao;
         private List<Utilizacao> utilizacoe;
@@ -373,12 +374,14 @@ public class InteracaoUser {
         private String sufixos;
         private String prefereido;
         private String usoCondicional;
+        
         Vinculo
         private String relacionamento;
         private Calendar dataInicio;
         private Calendar dataFim;
          */
 
+ /*********************************************************************************************************/
 
         Comunicacao cmnik = new Comunicacao();
 //        cmnik.setDetalhes(detalhe);
@@ -407,7 +410,6 @@ public class InteracaoUser {
         List<Vinculo> novoVinculo = null;
 //        novoVinculo.add(novoV);
 
-
         individuo.setComunicacoes(novaComunicacao);
         individuo.setDadoDemografico(novoDadoDemografico);
         individuo.setEnderecos(novoEndereco);
@@ -417,118 +419,4 @@ public class InteracaoUser {
 
         return individuo;
     }
-/*
-    public static void cadastrar() {
-        //Certidão
-        String tipo_certidao = "";
-        String cartorio = "";
-        String livro = "";
-        String folha = "";
-        String termo = "";
-
-        //Comunicação
-        String meio = "";
-        String preferencia = "";
-        String detalhe = "";
-        String uso_comunicacao = "";
-
-        //CTPS
-        String serie = "";
-        String estado_ctps = "";
-
-        //Dado Demográfico
-        //    String data_obito = ""; //////////////////////////
-        //    String data_nascimento = "";////////////////////
-        //    String nacionalidade = "";///////////////
-        String sexo = "";
-        String nome_da_mae = "";
-        String nome_do_pai = "";
-        String situacao_familiar = "";
-        String raca_cor = "";
-        String comentario = "";
-        String fonte_notificacao_obito = "";
-        String nascimento_pluralidade = "";
-        String nascimento_ordem = "";
-        String nascimento_seguimento = "";
-
-        //Data
-        String data = "";
-        String acuracia = "";
-
-        //Endereço
-        String key_endereco = "";
-        //    String data_inicio_endereco = ""; /////
-        //    String data_fim_endereco = "";//////
-        //    String linha_endereco = "";///////
-        String bairro = "";
-        String distrito = "";
-        String codigo_municipio = "";
-        String estado_endereco = "";
-        String CEP = "";
-        String caixa_postal = "";
-        String pais_endereco = "";
-        String tipo_endereco = "";
-
-        //Identificador
-        String key_identificador = "";
-        //    String CTPS = ""; /////
-        //    String certidao = "";/////
-        //    String titulo_eleitoral = "";//////
-        //    String vinculo_identificador = "";/////
-        String designacao = "";
-        String area = "";
-        String emissor = "";
-        String data_identificador = "";
-        String tipo_identificador = "";
-
-        //Indivíduo
-        String key_individuo = "";
-        //    String[] endereco;//////////
-        //    String dado_demografico = "";//////////
-        //    String[] comunicacao;///////////
-        //    String[] nome;////////////////
-        //    String[] identificador;////////////
-        //    String[] vinculo;///////////////////
-
-        //Linha de Endereço
-        String ordem = "";
-        String linha = "";
-
-        //Nacionalidade
-        String municipio = "";
-        String estado = "";
-        String pais = "";
-        String data_entrada_pais = "";
-
-        //Nome
-        String key_nome = "";
-        //    String utilizacao_nome = "";/////////////
-        //    String representacao = "";/////////////////
-        String titulos = "";
-        String nomes = "";
-        String sobrenomes = "";
-        String sufixos = "";
-        String preferido = "";
-        String uso_condicional = "";
-
-        //Representação
-        String utilizacao = "";
-        String alternativa = "";
-
-        //Titulo de Eleitor
-        String secao = "";
-        String zona = "";
-
-        //Utilização
-        String uso = "";
-        String data_icial_utilizacao = "";
-        String data_final_utilizacao = "";
-
-        //Vinculo
-        String relacionamento = "";
-        String data_inicio_vinculo = "";
-        String data_fim_vinculo = "";
-
-    }
-    */
 }
