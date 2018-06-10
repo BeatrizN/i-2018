@@ -90,7 +90,7 @@ public class InteracaoUser {
         String municipio = "";
         String estado = "";
         String pais = "";
-        String data_entrada_pais = "";
+        Calendar data_entrada_pais = "";
 
         //Nome
         String key_nome = "";
@@ -108,18 +108,18 @@ public class InteracaoUser {
         String alternativa = "";
 
         //Titulo de Eleitor
-        String secao = "";
-        String zona = "";
+        int secao = "";
+        int zona = "";
 
         //Utilização
         String uso = "";
-        String data_icial_utilizacao = "";
-        String data_final_utilizacao = "";
+        Calendar data_icial_utilizacao = "";
+        Calendar data_final_utilizacao = "";
 
         //Vinculo
         String relacionamento = "";
-        String data_inicio_vinculo = "";
-        String data_fim_vinculo = "";
+        Calendar data_inicio_vinculo = "";
+        Calendar data_fim_vinculo = "";
 
 /**********************************************************************************************************/
 
@@ -364,22 +364,39 @@ public class InteracaoUser {
         i_linhaEndereco.setOrdem(ordem);
         i_linhaEndereco.setLinha(linha);
         
-        /*
-        Nome
-        private List<Representacao> representacao;
-        private List<Utilizacao> utilizacoe;
-        private String titulos;
-        private String nomes;
-        private String sobrenomes;
-        private String sufixos;
-        private String prefereido;
-        private String usoCondicional;
+        Nacionalidade i_nacionalidade = new Nacionalidade();
+        i_nacionalidade.setMunicipio(municipio);
+        i_nacionalidade.setEstado(estado);
+        i_nacionalidade.setPais(pais);
+        i_nacionalidade.setEntradaPais(data_entrada_pais);
         
-        Vinculo
-        private String relacionamento;
-        private Calendar dataInicio;
-        private Calendar dataFim;
-         */
+        Nome i_nome = new Nome();
+        i_nome.setRepresentacao(representacao);
+        i_nome.setUtilizacao(utilizacoe);
+        i_nome.setTitulos(titulos);
+        i_nome.setNomes(nomes);
+        i_nome.setSobrenomes(sobrenomes);
+        i_nome.setSufixos(sufixos);
+        i_nome.setPrefereido(preferido);
+        i_nome.setUsoCondicional(uso_condicional);
+        
+        Representacao i_representacao = new Representacao();
+        i_representacao.setUtilizacao(utilizacao);
+        i_representacao.setAlternativa(alternativa);
+
+        TituloEleitoral i_tituloEleitoral = new TituloEleitoral();
+        i_tituloEleitoral.setSecao(secao);
+        i_tituloEleitoral.setZona(zona);
+
+        Utilização i_utilizacao = new Utilização();
+        i_utilizacao.setUso(uso);
+        i_utilizacao.setDataInicial(data_icial_utilizaca);
+        i_utilizacao.setDataFinal(data_final_utilizacao);
+      
+        Vinculo i_vinculo = new Vinculo();
+        i_vinculo.setRelacionamento(relacionamento);
+        i_vinculo.setDataInicio(data_inicio_vinculo);
+        i_vinculo.setDataFim(data_fim_vinculo);
 
  /*********************************************************************************************************/
 
